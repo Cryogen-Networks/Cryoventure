@@ -1,6 +1,6 @@
-//Character Constructor
+// Character Constructor
 function Character() {
-    this.name = input("Choose a name for your character.", "");
+    this.name = input("Choose a name for your character.", "", true);
     this.inventory = [];
     this.outfit = {
         helm: null,
@@ -10,12 +10,13 @@ function Character() {
     };
     this.action = [];
 }
-//Variables
-var response, out, content, player;
-//Input
+// Recieving Input
 function input(command, output) {
-    //Response
-    response = document.getElementById('in');
+    // Responding
+    var response = document.getElementById('in');
+    if (intro) {
+
+    }
     if (response.value == command) {
         show(output);
     } else if (response.value === isNaN) {
@@ -24,23 +25,21 @@ function input(command, output) {
         show('I don\'t think that\'s a valid command. Try another variant, or another command.');
     }
 }
-//Visuals
+// Visuals
 function show(p, intro) {
-    out = document.getElementById('out');
-    content = "<p>" + p + "</p>";
+    var out = document.getElementById('out');
+    var content = "<p>" + p + "</p>";
     if (intro) {
         out.innerHTML = content;
     } else {
         out.insertAdjacentHTML('beforeend', content);
     }
 }
-//Game instantiation
+// Game instantiation
 function init() {
-    player = new Character();
+    var player = new Character();
     show("Welcome to Cryogen, " + player.name + "!\nYou are now starting on your adventure..");
     show("--------------------------------------------------");
     show("You wake to the sound of horses neighing.. and blurred vison.\n[Shake your head!]");
     input('shake head', 'You shake your head, and your vision clears.\n');
 }
-//Starting..
-init();
