@@ -1,4 +1,3 @@
-debugger;
 //Character Constructor
 function Character() {
     this.name = input("Choose a name for your character.", "");
@@ -17,9 +16,9 @@ var response, out, content, player;
 function input(command, output) {
     //Response
     response = document.getElementById('in');
-    if (response.innerHTML == command) {
+    if (response.value == command) {
         show(output);
-    } else if (response.innerHTML === isNaN) {
+    } else if (response.value === isNaN) {
         input(command, output);
     } else {
         show('I don\'t think that\'s a valid command. Try another variant, or another command.');
