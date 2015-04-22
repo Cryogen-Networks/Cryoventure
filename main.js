@@ -11,11 +11,12 @@ function Character() {
     this.action = [];
 }
 // Recieving Input
-function input(command, output) {
+function input(command, output, intro) {
     // Responding
     var response = document.getElementById('in');
     if (intro) {
-
+        show(command);
+        Character.name = response.value;
     }
     if (response.value == command) {
         show(output);
